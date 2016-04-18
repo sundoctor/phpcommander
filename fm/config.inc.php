@@ -51,11 +51,11 @@ $WINDOWS = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'? true: false;
 $WINDRIVES = array();
 
 // Кодировка для страниц
-$CHARSET = 'windows-1251';
+$CHARSET = 'utf-8';
 
 // Корневые описания страниц
 
-$TITLE          = array('Test');
+$TITLE          = array('phpcommander-1.01');
 $KEYWORDS       = '1';
 $DESCRIPTION    = '2';
 $CONTENT        = '3';
