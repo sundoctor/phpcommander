@@ -1,0 +1,73 @@
+BODY,P,TD,TH,OL,UL,DIV,SPAN {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 12px;
+}
+
+
+B {
+    font-weight : bold;
+}
+
+I {
+    font-style : italic;
+}
+
+U {
+    text-decoration : underline;
+}
+
+A {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+A:link {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+A:active {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+A:visited {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+A:hover {
+    text-decoration: underline;
+    color: #FF0000;
+}
+
+PRE {
+	font-size: 12px;
+	font-family: Courier New;
+	font-weight: normal;
+	font-style: normal;
+}
+
+H1 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+H2 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+H3 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+    padding-left : 50px;
+}
+
+.text {
+    padding-left : 100px;
+    padding-right : 100px;
+}

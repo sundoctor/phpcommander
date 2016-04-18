@@ -1,0 +1,70 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var safepath = '<!--$safepath-->';
+function cmdGoBack() {
+    var newurl = 'index.php?cmd=list'+
+    '&path='+safepath+'&sort='+document.newform.sort.value;
+    document.location.href = newurl;
+}
+
+var block = false;
+function checkForm(form) {
+    if (block) return false;
+    var errMessage = "";
+    if (form.elements['filename'].value.length<1)
+        errMessage = "Неправильное имя файла!";
+    if (errMessage == '') {
+        block = true;
+        return true;
+    }
+    alert(errMessage);
+    return false;
+}
+
+//-->
+</SCRIPT>
+<TABLE border="0" cellspacing="0" cellpadding="3">
+<TR>
+<TD class="menuline">
+Now: <!--$now-->
+</TD>
+</TR>
+<TR>
+<TD><FONT FACE="Arial"># <!--$path--></FONT></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#9999CC">
+<TR>
+	<TD><TABLE border="0" cellspacing="2" cellpadding="0" width="100%">
+<TR bgcolor="#FFFFFF">
+	<TD><TABLE border="0" cellspacing="2" cellpadding="4" width="100%">
+<FORM ACTION="index.php" METHOD="post" NAME="newform" ID="newform" ONSUBMIT="return checkForm(this);">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="mkdir">
+<INPUT TYPE="hidden" NAME="sort" VALUE="<!--$sort-->">
+<INPUT TYPE="hidden" NAME="path" VALUE="<!--$path-->">
+     <TR bgcolor="#9999CC" align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD class="white" width="99%"><B>Make Dir</B></TD>
+    </TR>
+    <TR>
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%"><FONT FACE="Courier New,Courier,monospace"><INPUT type="text" name="filename" value="" size="40" maxlength="50"></FONT></TD>
+    </TR>
+    <TR align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%"><INPUT TYPE="submit" VALUE="&nbsp;&nbsp;MkDir&nbsp;&nbsp;"><INPUT TYPE="button" VALUE="&nbsp;&nbsp;Back&nbsp;&nbsp;" ONCLICK="javascript:cmdGoBack();"></TD>
+    </TR>
+</FORM>
+    </TABLE></TD>
+    </TR>
+    </TABLE></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="3" width="100%">
+<TR>
+<TD class="menuline">
+Free space: <!--$freespace-->
+</TD>
+</TR>
+</TABLE>
+<BR>

@@ -1,0 +1,100 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var safepath = '<!--$safepath-->';
+function cmdGoBack() {
+    var newurl = 'index.php?cmd=list'+
+    '&path='+safepath+'&sort='+document.newform.sort.value;
+    document.location.href = newurl;
+}
+
+var block = false;
+function checkForm(form) {
+    if (block) return false;
+    var errMessage = "";
+    if (errMessage == '') {
+        block = true;
+        return true;
+    }
+    alert(errMessage);
+    return false;
+}
+
+//-->
+</SCRIPT>
+<TABLE border="0" cellspacing="0" cellpadding="3">
+<TR>
+<TD class="menuline">
+Now: <!--$now-->
+</TD>
+</TR>
+<TR>
+<TD><FONT FACE="Arial"># <!--$path--></FONT></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#9999CC">
+<TR>
+	<TD><TABLE border="0" cellspacing="2" cellpadding="0" width="100%">
+<TR bgcolor="#FFFFFF">
+	<TD><TABLE border="0" cellspacing="2" cellpadding="4" width="100%">
+<FORM ACTION="index.php" METHOD="post" NAME="newform" ID="newform" ONSUBMIT="return checkForm(this);">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="setattr">
+<INPUT TYPE="hidden" NAME="sort" VALUE="<!--$sort-->">
+<INPUT TYPE="hidden" NAME="path" VALUE="<!--$path-->">
+<INPUT TYPE="hidden" NAME="filename" VALUE="<!--$filename-->">
+     <TR bgcolor="#9999CC" align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD class="white" width="99%"><B>Attr</B></TD>
+    </TR>
+    <TR>
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%">Attrs for <B><!--$xfilename--></B>:</TD>
+    </TR>
+    <TR>
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%">
+<TABLE border="0" cellspacing="2" cellpadding="4">
+<TR align="center">
+<TD>&nbsp;</TD>
+<TD>&nbsp;User&nbsp;</TD>
+<TD>&nbsp;Group&nbsp;</TD>
+<TD>&nbsp;Other&nbsp;</TD>
+</TR>
+<TR align="center">
+<TD>R</TD>
+<TD><INPUT TYPE="checkbox" NAME="u[]" VALUE="4"<!--$ur-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="g[]" VALUE="4"<!--$gr-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="o[]" VALUE="4"<!--$or-->></TD>
+</TR>
+<TR align="center">
+<TD>W</TD>
+<TD><INPUT TYPE="checkbox" NAME="u[]" VALUE="2"<!--$uw-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="g[]" VALUE="2"<!--$gw-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="o[]" VALUE="2"<!--$ow-->></TD>
+</TR>
+<TR align="center">
+<TD>X</TD>
+<TD><INPUT TYPE="checkbox" NAME="u[]" VALUE="1"<!--$ux-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="g[]" VALUE="1"<!--$gx-->></TD>
+<TD><INPUT TYPE="checkbox" NAME="o[]" VALUE="1"<!--$ox-->></TD>
+</TR>
+</TABLE>
+	    </TD>
+    </TR>
+    <TR align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%"><INPUT TYPE="submit" VALUE="&nbsp;&nbsp;Set&nbsp;&nbsp;"><INPUT TYPE="button" VALUE="&nbsp;&nbsp;Back&nbsp;&nbsp;" ONCLICK="javascript:cmdGoBack();"></TD>
+    </TR>
+</FORM>
+    </TABLE></TD>
+    </TR>
+    </TABLE></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="3" width="100%">
+<TR>
+<TD class="menuline">
+Free space: <!--$freespace-->
+</TD>
+</TR>
+</TABLE>
+<BR>

@@ -1,0 +1,44 @@
+<SCRIPT language="JavaScript">
+var block = false;
+function checkLogin(form) {
+    if (block) return false;
+    var errMessage = "";
+    if (form.elements['login'].value.length<3)
+        errMessage = "Incorrect login!";
+    else if (form.elements['pwd'].value.length<3)
+        errMessage = "Password required!";
+    if (errMessage=="") {
+        block = true;
+        return true;
+    }
+    alert(errMessage);
+    return false;
+}
+</SCRIPT>
+<TABLE border="0" cellspacing="0" cellpadding="0" width="260" bgcolor="#0066CC">
+<TR>
+<TD><TABLE border="0" cellspacing="2" cellpadding="3" width="260">
+<TR bgcolor="#0066CC">
+<TD STYLE="color:white;"><B>Authorization</B></TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<TABLE border="0" cellspacing="0" cellpadding="3" >
+<FORM ACTION="index.php" METHOD="post" ONSUBMIT="return checkLogin(this);">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="logon">
+<TR>
+	<TD>Login:</TD>
+	<TD><INPUT TYPE="text" NAME="login" VALUE="<!--$login-->" SIZE="20" MAXLENGTH="50" STYLE="background-color: #E1E1E1; border: 1px solid #C9C9C9;"></TD>
+</TR>
+<TR>
+	<TD>Password:</TD>
+	<TD><INPUT TYPE="password" NAME="pwd" VALUE="<!--$pwd-->" SIZE="20" MAXLENGTH="50" STYLE="background-color: #E1E1E1; border: 1px solid #C9C9C9;"></TD>
+</TR>
+<TR ALIGN="center">
+	<TD>&nbsp;</TD>
+	<TD><INPUT TYPE="submit" VALUE="&nbsp;&nbsp;Enter&nbsp;&nbsp;" STYLE="background-color: #E1E1E1; border: 1px solid #C9C9C9"></TD>
+</TR>
+</FORM>
+</TABLE>
+</TD>
+</TR></TABLE></TD>
+</TR></TABLE>

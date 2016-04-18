@@ -1,0 +1,117 @@
+<!--+first+-->
+<!--$js-->
+<!-- [+TopMenu] -->
+<TABLE border="0" cellspacing="0" cellpadding="3">
+<TR>
+<TD class="menuline">Now: <!--$now--></TD>
+</TR>
+<TR>
+<TD><FONT FACE="Arial"># <!--$path--></FONT></TD>
+</TR>
+<TR>
+<TD colspan="3" class="menuline" nowrap>
+<A HREF="javascript:cmdNew();">New</A> |
+<A HREF="javascript:cmdView();">View</A> |
+<A HREF="javascript:cmdEdit();">Edit</A> |
+<A HREF="javascript:cmdCut();">Cut</A> |
+<A HREF="javascript:cmdCopy();">Copy</A> |
+<A HREF="javascript:cmdPaste();">Paste</A> |
+<A HREF="javascript:cmdClear();">Clear</A> |
+<A HREF="javascript:cmdRename();">Rename</A> |
+<A HREF="javascript:cmdRefresh();">Refresh</A> |
+<A HREF="index.php?cmd=logout">Exit</A>
+</TD>
+</TR>
+</TABLE>
+<!-- [-TopMenu] -->
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#9999CC">
+<TR>
+    <TD><TABLE border="0" cellspacing="2" cellpadding="0" width="100%">
+<TR bgcolor="#FFFFFF">
+    <TD><TABLE border="0" cellspacing="2" cellpadding="2" width="100%">
+<FORM ACTION="index.php" METHOD="post" NAME="listform" ID="listform">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="list">
+<INPUT TYPE="hidden" NAME="path" VALUE="<!--$path-->">
+<INPUT TYPE="hidden" NAME="sort" VALUE="<!--$sort-->">
+<INPUT TYPE="hidden" NAME="info" VALUE="">
+    <TR bgcolor="#9999CC" align="center">
+        <TD class="white" width="1%">&raquo;</TD>
+        <TD class="white" width="1%"><B>Attr</B></TD>
+        <TD class="white" width="95%" nowrap><B>Name</B> <A HREF="index.php?cmd=list&sort=nameaz&path=<!--$safepath-->">&laquo;</A> <A HREF="index.php?cmd=list&sort=nameza&path=<!--$safepath-->">&raquo;</A></TD>
+        <TD class="white" width="1%" nowrap><B>Ext</B> <A HREF="index.php?cmd=list&sort=extaz&path=<!--$safepath-->">&laquo;</A> <A HREF="index.php?cmd=list&sort=extza&path=<!--$safepath-->">&raquo;</A></TD>
+        <TD class="white" width="1%" nowrap><B>Size</B> <A HREF="index.php?cmd=list&sort=sizeaz&path=<!--$safepath-->">&laquo;</A> <A HREF="index.php?cmd=list&sort=sizeza&path=<!--$safepath-->">&raquo;</A></TD>
+        <TD class="white" width="1%" nowrap><B>Modified</B> <A HREF="index.php?cmd=list&sort=dateaz&path=<!--$safepath-->">&laquo;</A> <A HREF="index.php?cmd=list&sort=dateza&path=<!--$safepath-->">&raquo;</A></TD>
+    </TR>
+<!--=first=-->
+
+<!--+middle+-->
+<TR bgcolor="<!--$rowcol-->">
+    <TD align="center" nowrap><!--$chk--></TD>
+    <TD class="fileline" nowrap><!--$attr--></TD>
+    <TD class="fileline"><!--$name-->&nbsp;</TD>
+    <TD class="fileline"><!--$ext-->&nbsp;</TD>
+    <TD class="fileline" align="right"><!--$size--></TD>
+    <TD class="fileline" nowrap><!--$date--></TD>
+</TR>
+<!--=middle=-->
+
+<!--+last+-->
+</FORM>
+    </TABLE></TD>
+    </TR>
+    </TABLE></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="3">
+<!-- [+BottomMenu] -->
+<TR>
+<TD class="menuline" nowrap>
+<A HREF="javascript:cmdSelectAll();">All</A> |
+<A HREF="javascript:cmdSelectNone();">None</A> |
+<A HREF="javascript:cmdAttr();">Attr</A> |
+<A HREF="javascript:cmdMakeDir();">MkDir</A> |
+<A HREF="javascript:cmdRemove();">Remove</A> |
+<A HREF="javascript:cmdRemoveAll();">Remove All</A> |
+<A HREF="javascript:cmdRemoveX();">Remove Exept</A> |
+<A HREF="javascript:cmdSend();">Send</A>
+</TD>
+</TR>
+<!-- [-BottomMenu] -->
+<TR>
+<TD>
+<table border="0" cellspacing="0" cellpadding="3">
+<!-- [+UploadMenu] -->
+<FORM ACTION="index.php" NAME="uploadform" METHOD="post" ENCTYPE="multipart/form-data">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="upload">
+<INPUT TYPE="hidden" NAME="sort" VALUE="<!--$sort-->">
+<INPUT TYPE="hidden" NAME="path" VALUE="<!--$path-->">
+<tr>
+<td><FONT FACE="Arial"><!--$filter--><INPUT TYPE="file" NAME="userfile" SIZE="30"></FONT></td>
+<td class="menuline"><A HREF="javascript:document.uploadform.submit();">Upload!</A></td>
+</tr>
+</FORM>
+<!-- [-UploadMenu] -->
+</table>
+</TD>
+</TR>
+<TR>
+<TD class="menuline">
+Free space: <!--$freespace-->
+</TD>
+</TR>
+</TABLE>
+<BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Error!
+var errMsg = '<!--$errmsg-->';
+var id = null;
+function ShowMsg() {
+    window.clearTimeout(id); 
+    alert(errMsg);
+}
+if (errMsg!='')
+    id = window.setTimeout("ShowMsg()",100);
+//-->
+</SCRIPT>
+<!--=last=-->

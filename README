@@ -1,0 +1,54 @@
+PHP Commander
+=============
+
+Thank you for choosing PHP Commander - opensource software
+written on PHP for remote online file managemen
+
+- It was made very simple - to copy & run in one click.
+- No special setup is needed.
+- See all of the options in 'config.inc.php'
+- Be free to callback author by e-mail.
+
+PHPCommander allows online text edition with
+files and file uploading. It supports text/plain
+and text/html formats.
+
+
+INSTALLATION
+------------
+
+Please unpack sources under a Web-accessible directory, 
+e.g. /fm/  Use it as http://you_site.com/fm/
+
+You can also limit the access to '/fm/' dir in your apache '.htaccess'
+
+
+REQUIREMENTS
+------------
+
+- Linux/Windows
+- Apache/Nginx/Lighttpd
+- PHP5+
+- Chrome/Firefox/Opera
+
+The minimum requirement  is that your Web server supports
+PHP 5.1.0 or above. PHP Commander has been tested with Apache
+and Nginx servers on Linux operating systems.
+
+
+WHAT's NEXT
+-----------
+
+Please visit github page of the project website
+for last version and discussion with other users.
+
+http://www.github.com/sundoctor/phpcommander
+
+And visit us at http://www.7masters.org
+
+
+Regards,
+SunDoctor
+
+Remote Assistant Sup.
+

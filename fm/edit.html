@@ -1,0 +1,56 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var safepath = '<!--$safepath-->';
+function cmdGoBack() {
+    var newurl = 'index.php?cmd=list'+
+    '&path='+safepath+'&sort='+document.editform.sort.value;
+    document.location.href = newurl;
+}
+//-->
+</SCRIPT>
+<TABLE border="0" cellspacing="0" cellpadding="3">
+<TR>
+<TD class="menuline">
+Now: <!--$now-->
+</TD>
+</TR>
+<TR>
+<TD><FONT FACE="Arial"># <!--$path--></FONT></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="0" bgcolor="#9999CC">
+<TR>
+	<TD><TABLE border="0" cellspacing="2" cellpadding="0" width="100%">
+<TR bgcolor="#FFFFFF">
+	<TD><TABLE border="0" cellspacing="2" cellpadding="4" width="100%">
+<FORM ACTION="index.php" METHOD="post" NAME="editform" ID="editform">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="update">
+<INPUT TYPE="hidden" NAME="path" VALUE="<!--$path-->">
+<INPUT TYPE="hidden" NAME="sort" VALUE="<!--$sort-->">
+<INPUT TYPE="hidden" NAME="filename" VALUE="<!--$filename-->">
+    <TR bgcolor="#9999CC" align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD class="white" width="99%"><B>File: <!--$filename--></B></TD>
+    </TR>
+    <TR align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%"><FONT FACE="Courier New,Courier,monospace"><TEXTAREA COLS="50" ROWS="15" NAME="text" WRAP="soft"><!--$filecontent--></TEXTAREA></FONT></TD>
+    </TR>
+    <TR align="center">
+	    <TD class="white" width="1%">&raquo;</TD>
+	    <TD width="99%"><INPUT TYPE="submit" VALUE="&nbsp;&nbsp;Save&nbsp;&nbsp;"><INPUT TYPE="button" VALUE="&nbsp;&nbsp;Back&nbsp;&nbsp;" ONCLICK="javascript:cmdGoBack();"></TD>
+    </TR>
+</FORM>
+    </TABLE></TD>
+    </TR>
+    </TABLE></TD>
+</TR>
+</TABLE>
+<TABLE border="0" cellspacing="0" cellpadding="3" width="100%">
+<TR>
+<TD class="menuline">
+Free space: <!--$freespace-->
+</TD>
+</TR>
+</TABLE>
+<BR>
